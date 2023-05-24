@@ -92,8 +92,23 @@ $(function () {
     //sets timesection to military time
     // timeSection.textContent = i;
   }
+  //*****
+  //  addEventListener to save what is in time block
+  // *****
 
-  //addEventListener to save what is in time block
+  // <i class="fas fa-save" aria-hidden="true"></i> (is this the button)
+  // var saveItem = document.querySelector("Nameofbutton?");
+
+  // I think the button already has a variable assigned to it from this:  var taskSave = document.createElement("button");
+
+  // saveItem.addEventListener("click", function() {
+  //     if (There is an task in task section) {
+  //     grab the three elements of timeBlock
+  //     and put them in local Storage
+  //     localStorage.setItem("id", the ID from the timeblock);
+  //   }
+
+  // });
   console.log(timeBlock);
   console.log(taskSection);
 });
