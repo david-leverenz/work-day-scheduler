@@ -20,4 +20,46 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+  // console.log(dayjs().format("dddd MMMM, D"));
+
+  var currentHour = parseInt(dayjs().format("H"));
+  console.log(typeof currentHour);
+
+  var dayDate = document.getElementById("currentDay");
+  dayDate.textContent = dayjs().format("dddd MMMM, D");
+  var containerElement = document.getElementById("container");
+
+  for (let i = 9; i < 18; i++) {
+    // var element = array[i];
+    var timeBlock = document.createElement("div");
+    var timeSection = document.createElement("p");
+    var taskSection = document.createElement("textarea");
+    var taskSave = document.createElement("button");
+
+    timeBlock.setAttribute("class", "row time-block");
+    //timeBlock.setAttribute("class","row time-block past");
+    timeSection.setAttribute("class", "col-2 col-md-1 hour text-center py-3");
+    taskSection.setAttribute("class", "col-8 col-md-10 description");
+    taskSave.setAttribute("class", "btn saveBtn col-2 col-md-1");
+
+    timeSection.textContent = i;
+    taskSave.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
+
+    timeBlock.append(timeSection, taskSection, taskSave);
+    containerElement.append(timeBlock);
+
+    if (currentHour < i) {
+      timeBlock.classList.add("future");
+    } else if (currentHour === i) {
+      timeBlock.classList.add("present");
+    } else {
+      timeBlock.classList.add("past");
+    }
+
+
+
+
+  }
+
 });
