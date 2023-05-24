@@ -23,13 +23,18 @@ $(function () {
 
   // console.log(dayjs().format("dddd MMMM, D"));
 
+  // get current hour and convert to a number
   var currentHour = parseInt(dayjs().format("H"));
-  console.log(typeof currentHour);
+  // console.log(typeof currentHour);
 
+  // put current day in element currentday
   var dayDate = document.getElementById("currentDay");
   dayDate.textContent = dayjs().format("dddd MMMM, D");
+
+  // create a variable for the container section
   var containerElement = document.getElementById("container");
 
+  // runs through hours of the day and creates timeBlock for each hour
   for (let i = 9; i < 18; i++) {
     // var element = array[i];
     var timeBlock = document.createElement("div");
@@ -37,25 +42,53 @@ $(function () {
     var taskSection = document.createElement("textarea");
     var taskSave = document.createElement("button");
 
+    //sets the attributes for each row and section
     timeBlock.setAttribute("class", "row time-block");
-    //timeBlock.setAttribute("class","row time-block past");
     timeSection.setAttribute("class", "col-2 col-md-1 hour text-center py-3");
     taskSection.setAttribute("class", "col-8 col-md-10 description");
     taskSave.setAttribute("class", "btn saveBtn col-2 col-md-1");
 
-    timeSection.textContent = i;
+
+
+    //puts the button in the section taskSave
     taskSave.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
 
+    //appends all sections to the time block
     timeBlock.append(timeSection, taskSection, taskSave);
     containerElement.append(timeBlock);
 
+    //checks current hour and adds formatting defined for that hour in the css
     if (currentHour < i) {
-      timeBlock.classList.add("future");
+      taskSection.classList.add("future");
     } else if (currentHour === i) {
-      timeBlock.classList.add("present");
+      taskSection.classList.add("present");
     } else {
-      timeBlock.classList.add("past");
+      taskSection.classList.add("past");
     }
+
+    // set time seection to 12 hour format
+    if (i === 9) {
+      timeSection.textContent = "9:00 a.m.";
+    } else if (i === 10) {
+      timeSection.textContent = "10:00 a.m.";
+    } else if (i === 11) {
+      timeSection.textContent = "11:00 a.m.";
+    } else if (i === 12) {
+      timeSection.textContent = "12:00 p.m.";
+    } else if (i === 13) {
+      timeSection.textContent = "1:00 p.m.";
+    }else if (i === 14) {
+      timeSection.textContent = "2:00 p.m.";
+    } else if (i === 15) {
+      timeSection.textContent = "3:00 p.m.";
+    }else if (i === 16) {
+      timeSection.textContent = "4:00 p.m.";
+    } else {
+      timeSection.textContent = "5:00 p.m.";
+    }
+
+    //sets timesection to military time
+    // timeSection.textContent = i;
 
 
 
