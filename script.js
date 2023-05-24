@@ -44,11 +44,10 @@ $(function () {
 
     //sets the attributes for each row and section
     timeBlock.setAttribute("class", "row time-block");
+    timeBlock.setAttribute("id", i);
     timeSection.setAttribute("class", "col-2 col-md-1 hour text-center py-3");
     taskSection.setAttribute("class", "col-8 col-md-10 description");
     taskSave.setAttribute("class", "btn saveBtn col-2 col-md-1");
-
-
 
     //puts the button in the section taskSave
     taskSave.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
@@ -56,6 +55,9 @@ $(function () {
     //appends all sections to the time block
     timeBlock.append(timeSection, taskSection, taskSave);
     containerElement.append(timeBlock);
+
+    // console.log(timeBlock);
+    // console.log(taskSection)
 
     //checks current hour and adds formatting defined for that hour in the css
     if (currentHour < i) {
@@ -77,11 +79,11 @@ $(function () {
       timeSection.textContent = "12:00 p.m.";
     } else if (i === 13) {
       timeSection.textContent = "1:00 p.m.";
-    }else if (i === 14) {
+    } else if (i === 14) {
       timeSection.textContent = "2:00 p.m.";
     } else if (i === 15) {
       timeSection.textContent = "3:00 p.m.";
-    }else if (i === 16) {
+    } else if (i === 16) {
       timeSection.textContent = "4:00 p.m.";
     } else {
       timeSection.textContent = "5:00 p.m.";
@@ -89,10 +91,9 @@ $(function () {
 
     //sets timesection to military time
     // timeSection.textContent = i;
-
-
-
-
   }
 
+  //addEventListener to save what is in time block
+  console.log(timeBlock);
+  console.log(taskSection);
 });
