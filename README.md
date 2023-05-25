@@ -1,47 +1,33 @@
+# Note for the grader:
+I started coding in js because Poornima said we could use either jquery or js for assignments in an earlier class.  Also there is no mention of using jquery in the grading requirements of the Module 5 Challenge.  You'll notice some jquery towards the end of the assignment.  This is because the TA that helped me with getting the local storage to work could not figure it out in js.
+
 # Work Day Scheduler
 
 This page allows you to plan a work day from 9-5.
 
 ## Description
-An in-depth paragraph about your project and overview of use.
+When you open the planner the current day is displayed at the top of the scheduler.<br>
+When you scroll down you are presented with timeblocks for standard business hours.<br>
+When you view the timeblocks for that day each timeblock is color coded to indicate whether it is in the past, present, or future. <br>
+When you click into a timeblock you can enter an event.<br>
+When you click the save button for that timeblock the text for that event is saved in local storage. <br>
+When you refresh the page the saved events persist.<br>
+
 ## Getting Started
 ### Dependencies
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+N/A
 ### Installing
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+N/A
 ### Executing program
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+N/A
 ## Help
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+N/A
 ## Authors
-Contributors names and contact info
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+David Leverenz
 ## Version History
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+Version 1.0 Initial Release<br>
 ## License
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+N/A
 ## Acknowledgments
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
-
-From <https://gist.githubusercontent.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc/raw/d59043abbb123089ad6602aba571121b71d91d7f/README-Template.md> 
-
-![image](https://github.com/david-leverenz/work-day-scheduler/assets/131185593/bfb1020e-0e90-4370-987d-84227d4325d9)
+Thanks to my tutor, Erik Hirsch, for helping decide on a method for creation and helping me with the syntax.
+Thanks to my TA, Sam Adams, for helping me figure out the local storage piece.
