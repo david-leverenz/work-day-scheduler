@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+$(document).ready(function() {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -48,6 +48,9 @@ $(function () {
     timeSection.setAttribute("class", "col-2 col-md-1 hour text-center py-3");
     taskSection.setAttribute("class", "col-8 col-md-10 description");
     taskSave.setAttribute("class", "btn saveBtn col-2 col-md-1");
+
+    // this is a guess so that the button can refer to the id of timebloack for the button click event
+    taskSave.setAttribute("id", i + "-button");
 
     //puts the button in the section taskSave
     taskSave.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
@@ -101,14 +104,36 @@ $(function () {
 
   // I think the button already has a variable assigned to it from this:  var taskSave = document.createElement("button");
 
-  // saveItem.addEventListener("click", function() {
-  //     if (There is an task in task section) {
-  //     grab the three elements of timeBlock
-  //     and put them in local Storage
-  //     localStorage.setItem("id", the ID from the timeblock);
-  //   }
+  // ??? Maybe Module 4 Lesson 25 ???
 
+  // var value = document.querySelector(".description").textContent;
+  // console.log(value);
+
+  // taskSave.addEventListener("click", function () {
+  //   alert("Working");
+    // var value = document.querySelector(".description").textContent;
+    // console.log(value);
+
+  //   //     if the task section isn't null
+  //   if (taskSection !== "") {
+  //     //     grab the three elements of timeBlock and put them in local Storage
+  //     localStorage.setItem(id, time.Section, taskSection);
+  //   }
   // });
+
+  // $(".saveBtn").on("click", function() {
+  //   alert("Working")
+  // })
+var btn=document.querySelector(".saveBtn");
+
+  btn.addEventListener("click", saveHandler);
+  function saveHandler() {
+    // alert("Working");
+    var value = document.querySelector(".description").textContent;
+    console.log(value);
+
+
+  }
   console.log(timeBlock);
-  console.log(taskSection);
+  console.log(taskSave);
 });
