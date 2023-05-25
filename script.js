@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function() {
+$(document).ready(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -35,6 +35,8 @@ $(document).ready(function() {
   var containerElement = document.getElementById("container");
 
   // runs through hours of the day and creates timeBlock for each hour
+
+
   for (let i = 9; i < 18; i++) {
     // var element = array[i];
     var timeBlock = document.createElement("div");
@@ -95,6 +97,22 @@ $(document).ready(function() {
     //sets timesection to military time
     // timeSection.textContent = i;
   }
+
+  $('.saveBtn').on('click', function() {
+    var value = $(this).siblings(".description").val();
+    var idValue = $(this).parent().attr("id");
+    console.log(value, idValue);
+    if(value !== ""){
+      localStorage.setItem(idValue, value);
+    }
+  })
+
+  $('#9 .description').val(localStorage.getItem('9'));
+  $('#10 .description').val(localStorage.getItem('10'));
+  $('#11 .description').val(localStorage.getItem('11'));
+  $('#12 .description').val(localStorage.getItem('12'));
+  $('#13 .description').val(localStorage.getItem('13'));
+
   //*****
   //  addEventListener to save what is in time block
   // *****
@@ -111,8 +129,8 @@ $(document).ready(function() {
 
   // taskSave.addEventListener("click", function () {
   //   alert("Working");
-    // var value = document.querySelector(".description").textContent;
-    // console.log(value);
+  // var value = document.querySelector(".description").textContent;
+  // console.log(value);
 
   //   //     if the task section isn't null
   //   if (taskSection !== "") {
@@ -122,18 +140,24 @@ $(document).ready(function() {
   // });
 
   // $(".saveBtn").on("click", function() {
-  //   alert("Working")
+  // alert("Working")
   // })
-var btn=document.querySelector(".saveBtn");
+  // var btn = document.querySelectorAll(".saveBtn");
+  
+  // btn.addEventListener("click", saveHandler);
+  
+  // function saveHandler() {
+  //   alert("Working");
+  //   var value = $(this).siblings(".description").val();
+  //   var idValue = $(this).parent().attr("id");
+  //   // if (taskSection !== "") {
+  //   //     localStorage.setItem(id, timeSection, taskSection);
+  //   // }    
+  //   console.log(value);
+  //   console.log(idValue);
 
-  btn.addEventListener("click", saveHandler);
-  function saveHandler() {
-    // alert("Working");
-    var value = document.querySelector(".description").textContent;
-    console.log(value);
 
-
-  }
-  console.log(timeBlock);
-  console.log(taskSave);
+  // }
+  // console.log(timeBlock);
+  // console.log(taskSave);
 });
