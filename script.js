@@ -23,6 +23,13 @@ $(document).ready(function () {
 
   // console.log(dayjs().format("dddd MMMM, D"));
 
+// ************************************************
+
+// I started coding in js because Poornima said we could use either jquery or js for assignments in an earlier class.
+// Also there is no mention of using jquery in the grading requirements of the Module 5 Challenge.
+
+// ************************************************
+
   // get current hour and convert to a number
   var currentHour = parseInt(dayjs().format("H"));
   // console.log(typeof currentHour);
@@ -35,7 +42,6 @@ $(document).ready(function () {
   var containerElement = document.getElementById("container");
 
   // runs through hours of the day and creates timeBlock for each hour
-
 
   for (let i = 9; i < 18; i++) {
     // var element = array[i];
@@ -51,7 +57,8 @@ $(document).ready(function () {
     taskSection.setAttribute("class", "col-8 col-md-10 description");
     taskSave.setAttribute("class", "btn saveBtn col-2 col-md-1");
 
-    // this is a guess so that the button can refer to the id of timebloack for the button click event
+    // I created this in case each button needed the id of timeblack for the button click event to work.
+    // I ended up not using it.
     taskSave.setAttribute("id", i + "-button");
 
     //puts the button in the section taskSave
@@ -73,7 +80,7 @@ $(document).ready(function () {
       taskSection.classList.add("past");
     }
 
-    // set time seection to 12 hour format
+    // Set time section to 12 hour format.  There probably is a better way to do this.
     if (i === 9) {
       timeSection.textContent = "9:00 a.m.";
     } else if (i === 10) {
@@ -98,6 +105,8 @@ $(document).ready(function () {
     // timeSection.textContent = i;
   }
 
+  // This section is written in jquery because I needed help getting this to work.  The TA that helped me couldn't figure it out in js.
+
   $('.saveBtn').on('click', function() {
     var value = $(this).siblings(".description").val();
     var idValue = $(this).parent().attr("id");
@@ -107,57 +116,15 @@ $(document).ready(function () {
     }
   })
 
+  // Loads the data in local storage to the page.  There probably is a better way to do this but for the limited amount of time blocks, this was more efficient because it was quickest for me.
   $('#9 .description').val(localStorage.getItem('9'));
   $('#10 .description').val(localStorage.getItem('10'));
   $('#11 .description').val(localStorage.getItem('11'));
   $('#12 .description').val(localStorage.getItem('12'));
   $('#13 .description').val(localStorage.getItem('13'));
-
-  //*****
-  //  addEventListener to save what is in time block
-  // *****
-
-  // <i class="fas fa-save" aria-hidden="true"></i> (is this the button)
-  // var saveItem = document.querySelector("Nameofbutton?");
-
-  // I think the button already has a variable assigned to it from this:  var taskSave = document.createElement("button");
-
-  // ??? Maybe Module 4 Lesson 25 ???
-
-  // var value = document.querySelector(".description").textContent;
-  // console.log(value);
-
-  // taskSave.addEventListener("click", function () {
-  //   alert("Working");
-  // var value = document.querySelector(".description").textContent;
-  // console.log(value);
-
-  //   //     if the task section isn't null
-  //   if (taskSection !== "") {
-  //     //     grab the three elements of timeBlock and put them in local Storage
-  //     localStorage.setItem(id, time.Section, taskSection);
-  //   }
-  // });
-
-  // $(".saveBtn").on("click", function() {
-  // alert("Working")
-  // })
-  // var btn = document.querySelectorAll(".saveBtn");
-  
-  // btn.addEventListener("click", saveHandler);
-  
-  // function saveHandler() {
-  //   alert("Working");
-  //   var value = $(this).siblings(".description").val();
-  //   var idValue = $(this).parent().attr("id");
-  //   // if (taskSection !== "") {
-  //   //     localStorage.setItem(id, timeSection, taskSection);
-  //   // }    
-  //   console.log(value);
-  //   console.log(idValue);
-
-
-  // }
-  // console.log(timeBlock);
-  // console.log(taskSave);
+  $('#14 .description').val(localStorage.getItem('14'));
+  $('#15 .description').val(localStorage.getItem('15'));
+  $('#16 .description').val(localStorage.getItem('16'));
+  $('#17 .description').val(localStorage.getItem('17'));
+ 
 });
