@@ -10,6 +10,8 @@ Github Link: https://github.com/david-leverenz/work-day-schedulerLinks to an ext
 Live Link: https://david-leverenz.github.io/work-day-scheduler/Links to an external site.
 
 ## Screenshot
+![image](https://github.com/david-leverenz/work-day-scheduler/assets/131185593/4e3b1b40-38bf-41cd-89f9-a214b42921de)
+
 
 ## Description
 When you open the planner the current day is displayed at the top of the scheduler.<br>
