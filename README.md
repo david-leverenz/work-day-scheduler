@@ -5,6 +5,12 @@ I started coding in js because Poornima said we could use either jquery or js fo
 
 This page allows you to plan a work day from 9-5.
 
+## Links
+Github Link: https://github.com/david-leverenz/work-day-schedulerLinks to an external site. <br>
+Live Link: https://david-leverenz.github.io/work-day-scheduler/Links to an external site.
+
+## Screenshot
+
 ## Description
 When you open the planner the current day is displayed at the top of the scheduler.<br>
 When you scroll down you are presented with timeblocks for standard business hours.<br>
